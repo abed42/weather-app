@@ -38,7 +38,7 @@ searchForm.addEventListener("submit", (event) => {
   
       } else {
         setFavicons('./icons/default.png');
-      
+
       }
       city.innerText = data.location.name;
       icon.src = data.current.condition.icon;
