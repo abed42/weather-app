@@ -7,6 +7,11 @@ const temp = document.querySelector(".temp");
 
 const cityInput = document.querySelector(".city-input");
 const searchForm = document.querySelector("form");
+function setFavicons(favImg){
+  let favicon = document.querySelector('.favicon');
+  favicon.href = favImg
+}
+
 
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -27,6 +32,14 @@ searchForm.addEventListener("submit", (event) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+
+      if(data.current.condition.text === "Partly cloudy") {
+        setFavicons('./icons/partly-cloudy.ico');
+  
+      } else {
+        setFavicons('./icons/default.ico');
+      
+      }
       city.innerText = data.location.name;
       icon.src = data.current.condition.icon;
       condition.innerText = data.current.condition.text;
