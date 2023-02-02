@@ -37,8 +37,8 @@ searchForm.addEventListener("submit", (event) => {
         setFavicons('./icons/partly-cloudy.ico');
   
       } else {
-        setFavicons('./icons/default.gif');
-      
+        setFavicons('./icons/default.png');
+
       }
       city.innerText = data.location.name;
       icon.src = data.current.condition.icon;
